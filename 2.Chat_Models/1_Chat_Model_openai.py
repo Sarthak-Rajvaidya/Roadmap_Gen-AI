@@ -5,4 +5,4 @@ load_dotenv()
 model = ChatOpenAI(model= 'gpt-4')
 result = model.invoke("What is the capital of Inida?")
 
-print(result)
+print(result.content)
