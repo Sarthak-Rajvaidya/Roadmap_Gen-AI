@@ -13,4 +13,7 @@ while True:
     if user_input == 'exit':
         break
     result = model.invoke(chat_history)
+    chat_history.append(result.content)
     print("AI : ",result.content)
+    
+print(chat_history)
