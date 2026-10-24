@@ -5,3 +5,6 @@ class Person(TypedDict):
     name :str
     age:int
     
+new_person: Person = {'name':'Sarthak','age':20}
+
+print(new_person)
