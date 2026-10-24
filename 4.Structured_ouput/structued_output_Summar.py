@@ -1,6 +1,6 @@
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
-from typing import TypedDict,Annotated
+from typing import TypedDict,Annotated,Optional
 
 load_dotenv()
 
@@ -13,6 +13,9 @@ class Review(TypedDict):
     summary : Annotated[str,"A brif summary of review"]
     
     sentiment : Annotated[str,"Return sentiment of review either negative, positive or neutral"]
+    
+    pros : Annotated[Optional[list[str]],"write down the pros in the list"]
+    
 structured_model = model.with_structured_output(Review)
 
 result = structured_model.invoke("""I recently upgraded to the Samsung Galaxy S24 Ultra, and I must say, it’s an absolute powerhouse! The Snapdragon 8 Gen 3 processor makes everything lightning fast—whether I’m gaming, multitasking, or editing photos. The 5000mAh battery easily lasts a full day even with heavy use, and the 45W fast charging is a lifesaver.
