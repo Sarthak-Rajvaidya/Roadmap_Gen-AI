@@ -9,6 +9,7 @@ model = ChatOpenAI()
 
 #schema
 class Review(TypedDict):
+    key_themes : Annotated[list[str],"Write down all the key themes discuss in review"]
     summary : Annotated[str,"A brif summary of review"]
     
     sentiment : Annotated[str,"Return sentiment of review either negative, positive or neutral"]
