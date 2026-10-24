@@ -1,6 +1,6 @@
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
-from typing import TypedDict,Annotated,Optional
+from typing import TypedDict,Annotated,Optional,Literal
 
 load_dotenv()
 
@@ -12,7 +12,7 @@ class Review(TypedDict):
     key_themes : Annotated[list[str],"Write down all the key themes discuss in review"]
     summary : Annotated[str,"A brif summary of review"]
     
-    sentiment : Annotated[str,"Return sentiment of review either negative, positive or neutral"]
+    sentiment : Annotated[Literal["pos","neg"],"Return sentiment of review either negative, positive"]
     
     pros : Annotated[Optional[list[str]],"write down the pros in the list"]
     
