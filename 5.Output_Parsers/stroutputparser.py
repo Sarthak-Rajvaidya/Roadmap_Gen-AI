@@ -19,3 +19,9 @@ template1 = PromptTemplate(
     template='Write a detailed report on {topic}',
     input_variables=['topic']
 )
+
+
+template2 = PromptTemplate(
+    template='Write a 5 line summary on the folowing text ./n {text}',
+    input_variables=['text']
+)
