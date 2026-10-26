@@ -16,7 +16,7 @@ model = ChatOpenAI(llm =llm)
 #1st prompt ->Detailed report
 
 template1 = PromptTemplate(
-    template='Write a detailed report on {topic}',
+    template='Write a detailed report on {topic}', 
     input_variables=['topic']
 )
 
@@ -25,3 +25,11 @@ template2 = PromptTemplate(
     template='Write a 5 line summary on the folowing text ./n {text}',
     input_variables=['text']
 )
+
+parser = StrOutputParser()
+
+chain = template1 | model | parser | template2 | model | parser
+
+result = chain.invoke({'topic':'black hole'})
+
+print(result)
