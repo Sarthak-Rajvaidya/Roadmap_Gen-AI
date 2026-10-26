@@ -32,3 +32,5 @@ result = model.invoke(prompt1)
 prompt2 = template2.invoke({'text':result.content})
 
 result1 = model.invoke(prompt2)
+
+print(result1.content)
