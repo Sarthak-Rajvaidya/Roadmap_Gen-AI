@@ -1,17 +1,16 @@
-from langchain_huggingface import ChatHuggingFace,HuggingFaceEndpoint
-
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 
 load_dotenv()
 
-llm = HuggingFaceEndpoint(
+llm = ChatOpenAI(
     repo_id="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     task = "text-generation"
     
 )
 
-model = ChatHuggingFace(llm =llm)
+model = ChatOpenAI(llm =llm)
 
 #1st prompt ->Detailed report
 
