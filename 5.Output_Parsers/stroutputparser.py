@@ -15,3 +15,7 @@ model = ChatHuggingFace(llm =llm)
 
 #1st prompt ->Detailed report
 
+template1 = PromptTemplate(
+    template='Write a detailed report on {topic}',
+    input_variables=['topic']
+)
