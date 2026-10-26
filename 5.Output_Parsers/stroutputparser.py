@@ -25,3 +25,6 @@ template2 = PromptTemplate(
     template='Write a 5 line summary on the folowing text ./n {text}',
     input_variables=['text']
 )
+
+prompt1 = template1.invoke({'topic':'black hole'})
+result = model.invoke(prompt1)
