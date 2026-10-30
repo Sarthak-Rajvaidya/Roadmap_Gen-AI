@@ -20,3 +20,7 @@ model = ChatOpeanAI()
 parser = StrOutputParser()
 
 chain = prompt1 | model | parser | prompt2 | model |parser
+
+result = chain.invoke({'topic':'Uenployemnet in India'})
+
+print(result)
