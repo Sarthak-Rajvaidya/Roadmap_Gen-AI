@@ -9,3 +9,8 @@ prompt1 = PromptTemplate(
     template = 'Generate a detailed report on {topic}',
     input_variables=['topic']
 )
+
+prompt2 = PromptTemplate(
+    template = 'Genearate a 5 ponter summary from the following text \n {text} ',
+    input_variables=['text']
+)
