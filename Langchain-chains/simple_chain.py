@@ -14,3 +14,7 @@ prompt = PromptTemplate(
 model = ChatOpeanAI()
 
 parser = StrOutputParser
+
+chain = prompt | model | parser
+
+chain.invoke({'topic':'cricket'})
