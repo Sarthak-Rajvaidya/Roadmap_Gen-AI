@@ -14,3 +14,9 @@ prompt2 = PromptTemplate(
     template = 'Genearate a 5 ponter summary from the following text \n {text} ',
     input_variables=['text']
 )
+
+model = ChatOpeanAI()
+
+parser = StrOutputParser()
+
+chain = prompt1 | model | parser | prompt2 | model |parser
